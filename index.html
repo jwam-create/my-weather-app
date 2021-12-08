@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://kit.fontawesome.com/df9100aa83.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="src/styles.css" />
+		<title>Weather app</title>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-9">
+						<form id="search-form">
+							<input
+								type="search"
+								class="form-control"
+								id="search-input"
+								placeholder="Search:"
+								aria-describedby="searchCity"
+								autofocus="on"
+								autocomplete="off"
+							/>
+						</form>
+					</div>
+					<div class="col">
+						<button type="submit" class="btn btn-primary search-button">
+							Submit
+						</button>
+					</div>
+
+					<div class="col">
+						<button
+							type="submit"
+							class="btn btn-success"
+							id="currentLocationButton"
+						>
+							Current
+						</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<img class="main-weather-icon" src="images/fullsun.png" />
+					</div>
+					<div class="col">
+						<ul>
+							<li>
+								<span class="main-temp" id="main-temp">8 </span>
+								<span class="celsius" id="celsius-unit">°C</span
+								><span class="divider"> | </span>
+								<span class="fahrenheit" id="fahrenheit-unit">°F</span>
+							</li>
+							<li class="condition" id="condition">Clear</li>
+						</ul>
+					</div>
+					<div class="col">
+						<ul class="city-display">
+							<li class="place">
+								<span id="city">Paris</span>
+								<span id="country"> FR</span>
+							</li>
+							<li class="todays-date" id="current-date">Friday Nov 5, 18:00</li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<ul class="forecast-conditions">
+							<li>Precipitation: 5%</li>
+							<li>Humdity: 73%</li>
+							<li>Wind: 18km/hr</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+			<hr />
+			<footer>
+				<div class="row">
+					<div class="col">
+						<ul class="day-1">
+							<li class="day-1-date">
+								<h5><strong>Sat</strong> 11/6</h5>
+							</li>
+							<li>
+								<img src="images/rainclouds.png" class="day-1-icon" />
+							</li>
+							<li class="high-temp"><strong>12</strong>°C</li>
+							<li class="low-temp"><strong>8</strong>°C</li>
+						</ul>
+					</div>
+
+					<div class="col">
+						<ul class="day-2">
+							<li class="day-2-date">
+								<h5><strong>Sun</strong> 11/7</h5>
+							</li>
+							<li>
+								<img src="images/rainclouds.png" class="day-2-icon" />
+							</li>
+							<li class="high-temp"><strong>14</strong>°C</li>
+							<li class="low-temp"><strong>8</strong>°C</li>
+						</ul>
+					</div>
+
+					<div class="col">
+						<ul class="day-3">
+							<li class="day-3-date">
+								<h5><strong>Mon</strong> 11/8</h5>
+							</li>
+							<li>
+								<img src="images/suncloudy.png" class="day-3-icon" />
+							</li>
+							<li class="high-temp"><strong>12</strong>°C</li>
+							<li class="low-temp"><strong>6</strong>°C</li>
+						</ul>
+					</div>
+
+					<div class="col">
+						<ul class="day-4">
+							<li class="day-4-date">
+								<h5><strong>Tues</strong> 11/9</h5>
+							</li>
+							<li>
+								<img src="images/partialcloud.png" class="day-4-icon" />
+							</li>
+							<li class="high-temp"><strong>13</strong>°C</li>
+							<li class="low-temp"><strong>10</strong>°C</li>
+						</ul>
+					</div>
+
+					<div class="col">
+						<ul class="day-5">
+							<li class="day-5-date">
+								<h5><strong>Wed</strong> 11/10</h5>
+							</li>
+							<li>
+								<img src="images/sunrain.png" class="day-5-icon" />
+							</li>
+							<li class="high-temp"><strong>13</strong>°C</li>
+							<li class="low-temp"><strong>10</strong>°C</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="src/script.js"></script>
+	</body>
+</html>
