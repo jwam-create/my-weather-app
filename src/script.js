@@ -65,7 +65,7 @@ function displayFahrenheit(event) {
 let fahrenheitUnit = document.querySelector("#fahrenheit-unit");
 fahrenheitUnit.addEventListener("click", displayFahrenheit);
 
-/////Search City
+/////Search City + display current temperature
 
 function displayCountry(response) {
 	let input = response.data.sys.country;
@@ -106,7 +106,7 @@ function changeCity(event) {
 let newCity = document.querySelector("form");
 newCity.addEventListener("submit", changeCity);
 
-///Current Temperature
+///Current Geolocation Temperature
 
 function displayCurrentTemperature(response) {
 	let temperature = Math.round(response.data.main.temp);
