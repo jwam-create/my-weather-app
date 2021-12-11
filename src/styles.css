@@ -83,7 +83,7 @@ ul.city-display {
 	position: relative;
 	top: 20px;
 }
-.forecast-conditions {
+.todays-forecast-conditions {
 	font-weight: light;
 	opacity: 60%;
 	font-size: 20px;
@@ -102,20 +102,12 @@ ul.city-display {
 	text-transform: capitalize;
 }
 
-.day-1-icon,
-.day-2-icon,
-.day-3-icon,
-.day-4-icon,
-.day-5-icon {
+.day-icon {
 	width: 75px;
 	display: block;
 	margin: 0 auto;
 }
-.day-1,
-.day-2,
-.day-3,
-.day-4,
-.day-5 {
+.day-forecast {
 	border: none;
 	max-width: 100px;
 	text-align: center;
