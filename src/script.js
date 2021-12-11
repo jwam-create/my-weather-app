@@ -143,11 +143,18 @@ currentLocation.addEventListener("click", getCurrentPosition);
 
 ///Forecast
 function displayForecast() {
-	alert("hello");
-	let forecastHtml = `<div class="col">
+	let forecastElement = document.querySelector("#forecast");
+
+	let forecastHtml = `<div class="row">`;
+	let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
+
+	days.forEach(function (day) {
+		forecastHtml =
+			forecastHtml +
+			`<div class="col">
 					<ul class="day-forecast">
 						<li class="day-date-forecast">
-							<h5><strong>Sat</strong> 11/6</h5>
+							<h5><strong>${day}</strong> 11/6</h5>
 						</li>
 						<li>
 							<img src="images/rainclouds.png" class="day-icon" />
@@ -156,5 +163,8 @@ function displayForecast() {
 						<li class="low-temp"><strong>8</strong>°C</li>
 					</ul>
 				</div>`;
+	});
+	forecastHtml = forecastHtml + `</div>`;
+	forecastElement.innerHTML = forecastHtml;
 }
 displayForecast();
