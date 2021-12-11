@@ -11,6 +11,9 @@ ul {
 	list-style: none;
 	padding: 0;
 }
+p {
+	padding-left: 20px;
+}
 
 #search-form {
 	margin-top: 30px;
