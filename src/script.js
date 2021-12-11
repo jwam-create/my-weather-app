@@ -65,8 +65,48 @@ function displayFahrenheit(event) {
 let fahrenheitUnit = document.querySelector("#fahrenheit-unit");
 fahrenheitUnit.addEventListener("click", displayFahrenheit);
 
-/////Search City + display current temperature
+/////Search City + Display current temperature + Forecast
 
+function displayForecast(response) {
+	console.log(response);
+	let forecastElement = document.querySelector("#forecast");
+
+	let forecastHtml = `<div class="row">`;
+	let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
+
+	days.forEach(function (day) {
+		forecastHtml =
+			forecastHtml +
+			`<div class="col">
+					<ul class="day-forecast">
+						<li class="day-date-forecast">
+							<h5><strong>${day}</strong> 11/6</h5>
+						</li>
+						<li>
+							<img src="images/rainclouds.png" class="day-icon" />
+						</li>
+						<li class="high-temp"><strong>12</strong>°C</li>
+						<li class="low-temp"><strong>8</strong>°C</li>
+					</ul>
+				</div>`;
+	});
+	forecastHtml = forecastHtml + `</div>`;
+	forecastElement.innerHTML = forecastHtml;
+}
+
+function getForecast(coordinates) {
+	let apiKey = "3ef1c4739274de1e0c3fc584c54fc2ec";
+	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+	axios.get(apiUrl).then(displayForecast);
+}
+
+function displayTemperature(response) {
+	let temperature = Math.round(response.data.main.temp);
+	let mainTemp = document.querySelector("#main-temp");
+	mainTemp.innerHTML = temperature;
+
+	getForecast(response.data.coord);
+}
 function displayCountry(response) {
 	let input = response.data.sys.country;
 
@@ -79,12 +119,6 @@ function displayCondition(response) {
 
 	let mainCondition = document.querySelector("#condition");
 	mainCondition.innerHTML = condition;
-}
-
-function displayTemperature(response) {
-	let temperature = Math.round(response.data.main.temp);
-	let mainTemp = document.querySelector("#main-temp");
-	mainTemp.innerHTML = temperature;
 }
 
 function changeCity(event) {
@@ -140,31 +174,3 @@ function getCurrentPosition() {
 
 let currentLocation = document.querySelector("#currentLocationButton");
 currentLocation.addEventListener("click", getCurrentPosition);
-
-///Forecast
-function displayForecast() {
-	let forecastElement = document.querySelector("#forecast");
-
-	let forecastHtml = `<div class="row">`;
-	let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
-
-	days.forEach(function (day) {
-		forecastHtml =
-			forecastHtml +
-			`<div class="col">
-					<ul class="day-forecast">
-						<li class="day-date-forecast">
-							<h5><strong>${day}</strong> 11/6</h5>
-						</li>
-						<li>
-							<img src="images/rainclouds.png" class="day-icon" />
-						</li>
-						<li class="high-temp"><strong>12</strong>°C</li>
-						<li class="low-temp"><strong>8</strong>°C</li>
-					</ul>
-				</div>`;
-	});
-	forecastHtml = forecastHtml + `</div>`;
-	forecastElement.innerHTML = forecastHtml;
-}
-displayForecast();
