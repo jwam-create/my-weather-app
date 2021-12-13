@@ -21,80 +21,81 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<div class="row">
-					<div class="col-9">
-						<form id="search-form">
-							<input
-								type="search"
-								class="form-control"
-								id="search-input"
-								placeholder="Search:"
-								aria-describedby="searchCity"
-								autofocus="on"
-								autocomplete="off"
-							/>
-						</form>
-					</div>
-					<div class="col">
-						<button type="submit" class="btn btn-primary search-button">
-							Submit
-						</button>
-					</div>
+			<div class="weather-app">
+				<header>
+					<div class="row">
+						<div class="col-9">
+							<form id="search-form">
+								<input
+									type="search"
+									class="form-control"
+									id="search-input"
+									placeholder="Search:"
+									aria-describedby="searchCity"
+									autofocus="on"
+									autocomplete="off"
+								/>
+							</form>
+						</div>
+						<div class="col">
+							<button type="submit" class="btn btn-primary search-button">
+								Submit
+							</button>
+						</div>
 
-					<div class="col">
-						<button
-							type="submit"
-							class="btn btn-success"
-							id="currentLocationButton"
-						>
-							Current
-						</button>
+						<div class="col">
+							<button
+								type="submit"
+								class="btn btn-success"
+								id="currentLocationButton"
+							>
+								Current
+							</button>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<img class="main-weather-icon" src="images/fullsun.png" />
+					<div class="row">
+						<div class="col">
+							<ul class="city-display">
+								<li class="place">
+									<span id="city">Paris</span>
+									<span id="country"> FR</span>
+								</li>
+								<li class="todays-date" id="current-date">
+									Friday Nov 5, 18:00
+								</li>
+								<li class="condition" id="condition">Clear</li>
+							</ul>
+						</div>
+
+						<div class="col-4">
+							<ul class="todays-forecast-conditions">
+								<li>Precipitation: 5%</li>
+								<li>Humdity: 73%</li>
+								<li>Wind: 18km/hr</li>
+							</ul>
+						</div>
+						<div class="col">
+							<div class="float-sm-start">
+								<img class="main-weather-icon" src="images/fullsun.png" />
+							</div>
+							<span class="main-temp" id="main-temp">8 </span>
+							<span class="celsius" id="celsius-unit">°C</span
+							><span class="divider"> | </span>
+							<span class="fahrenheit" id="fahrenheit-unit">°F</span>
+						</div>
 					</div>
-					<div class="col">
-						<ul>
-							<li>
-								<span class="main-temp" id="main-temp">8 </span>
-								<span class="celsius" id="celsius-unit">°C</span
-								><span class="divider"> | </span>
-								<span class="fahrenheit" id="fahrenheit-unit">°F</span>
-							</li>
-							<li class="condition" id="condition">Clear</li>
-						</ul>
-					</div>
-					<div class="col">
-						<ul class="city-display">
-							<li class="place">
-								<span id="city">Paris</span>
-								<span id="country"> FR</span>
-							</li>
-							<li class="todays-date" id="current-date">Friday Nov 5, 18:00</li>
-						</ul>
-					</div>
-					<div class="col-4">
-						<ul class="todays-forecast-conditions">
-							<li>Precipitation: 5%</li>
-							<li>Humdity: 73%</li>
-							<li>Wind: 18km/hr</li>
-						</ul>
-					</div>
-				</div>
-			</header>
-			<hr />
-			<footer>
-				<div class="forecast" id="forecast"></div>
-			</footer>
+				</header>
+				<hr />
+				<footer>
+					<div class="forecast" id="forecast"></div>
+				</footer>
+			</div>
+			<p>
+				<a href="https://github.com/jwam-create/my-weather-app" target="_blank">
+					Open-source code</a
+				>, by Jenna Wamsley
+			</p>
 		</div>
-		<p>
-			<a href="https://github.com/jwam-create/my-weather-app" target="_blank">
-				Open-source code</a
-			>, by Jenna Wamsley
-		</p>
 		<script src="src/script.js"></script>
 	</body>
 </html>
