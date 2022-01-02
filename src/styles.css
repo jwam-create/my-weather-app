@@ -50,7 +50,7 @@ div.col {
 .main-weather-icon {
 	width: 85px;
 	display: block;
-	display: inline;
+	display: inline-block;
 }
 .main-temp {
 	font-size: 69px;
